@@ -1,0 +1,54 @@
+/* Jake Kravas
+This file styles index.html
+*/
+
+
+body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  background-color: #323946;
+  color: #0ef;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#chat-content {
+  padding: 10px;
+  font-size: 20px;
+  height: 400px;
+}
+
+.chat {
+  margin: 8px;
+}
+
+#chat-input {
+
+  background-color: #1f242d;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  padding: 20px;
+
+  /* background-color: #1f242d;
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 0);
+  width: 100%;
+  text-align: center;
+  padding: 20px;
+  font-size: 26px; */
+}
+
+.user-input {
+  width: 250px;
+}
+
+.input-group {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
+  width: 25%;
+}
+
