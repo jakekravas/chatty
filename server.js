@@ -5,7 +5,7 @@ and adds chat aliases and messages to the database
 
 const express = require('express');
 const app = express();
-const port = 80;
+const port = 8080;
 const bp = require('body-parser');
 const mongoose = require('mongoose');
 
