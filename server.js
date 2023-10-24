@@ -12,6 +12,7 @@ const mongoose = require('mongoose');
 // Database stuff
 // const MONGODB_URL = 'mongodb://localhost:27017';
 const MONGODB_URL = 'mongodb://localhost:27017/chatty';
+// const MONGODB_URL = 'mongodb+srv://jake:a4d7g3dmjfvDJ4F4@cluster0.mw0iqgf.mongodb.net/?retryWrites=true&w=majority';
 
 let Schema = mongoose.Schema;
 
@@ -55,7 +56,6 @@ app.get('/get', async function(req, res) {
 
 
 app.post('/createchat', async function(req, res) {
-
   let time = req.body.time;
   let message = req.body.message;
   let alias = req.body.alias;
