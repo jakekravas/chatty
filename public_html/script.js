@@ -14,6 +14,7 @@ messageForm.addEventListener('submit', function(e) {
   let aliasVal = document.getElementById('alias-input').value;
   let messageVal = document.getElementById('message-input').value;
 
+  // if both alias and message are not empty, send them to back-end
   if (aliasVal && messageVal) {
     let currentTime = new Date().getTime();
     let newMessageHTML = `<p class='chat'><strong>${aliasVal}: </strong>${messageVal}</p>`;
@@ -35,6 +36,7 @@ messageForm.addEventListener('submit', function(e) {
       return response.text();
     }).then((text) => {
       console.log(text);
+      // add message content to HTML
       chatContent.innerHTML = chatContent.innerHTML + newMessageHTML;
     });
 
@@ -44,6 +46,7 @@ messageForm.addEventListener('submit', function(e) {
 
 window.onload = loadAllMessages();
 
+// retrieve all messages in database and display them to user
 function loadAllMessages() {
 
   let url = 'http://127.0.0.1:8080/get';

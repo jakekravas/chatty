@@ -11,10 +11,9 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 
 // Database stuff
-// const MONGODB_URL = 'mongodb://localhost:27017';
-// const MONGODB_URL = 'mongodb://localhost:27017/chatty';
-// const MONGODB_URL = 'mongodb+srv://jake:a4d7g3dmjfvDJ4F4@cluster0.mw0iqgf.mongodb.net/?retryWrites=true&w=majority';
-const MONGODB_URL = 'mongodb://127.0.0.1:27017/chatty';
+// const MONGODB_URL = 'mongodb://127.0.0.1:27017/chatty';
+// const MONGODB_URL = 'mongodb+srv://doadmin:<replace-with-your-password>@db-mongodb-nyc3-48338-e31ed994.mongo.ondigitalocean.com/admin?replicaSet=db-mongodb-nyc3-48338&tls=true&authSource=admin';
+const MONGODB_URL = 'mongodb+srv://jake:a4d7g3dmjfvDJ4F4@cluster0.mw0iqgf.mongodb.net/?retryWrites=true&w=majority';
 
 let Schema = mongoose.Schema;
 
@@ -26,6 +25,7 @@ let ChatSchema = new Schema({
 
 let Chat = mongoose.model('chat', ChatSchema );
 
+// Starts database
 const db = async() => {
   try {
     const con = await mongoose.connect(MONGODB_URL);
@@ -41,10 +41,12 @@ app.use(express.static('/assets'), express.static(__dirname + '/public_html'));
 app.use(bp.json());
 app.use(cors());
 
+// Starts app
 app.listen(port, () =>
-  console.log(`App listening at http://localhost:${port}`)
+console.log(`App listening at http://127.0.0.1:${port}`)
 );
 
+// Gets all chats from database and sends them to front-end as as HTML-compatible string
 app.get('/get', async function(req, res) {
   let chats = await Chat.find({});
   let chatsHTML = '';
@@ -57,7 +59,7 @@ app.get('/get', async function(req, res) {
   res.end(chatsHTML);
 })
 
-
+// Saves user-inputted chat
 app.post('/createchat', async function(req, res) {
   let time = req.body.time;
   let message = req.body.message;
