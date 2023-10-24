@@ -2,7 +2,6 @@
 This file styles index.html
 */
 
-
 body {
   box-sizing: border-box;
   margin: 0;
@@ -15,7 +14,8 @@ body {
 #chat-content {
   padding: 10px;
   font-size: 20px;
-  height: 400px;
+  height: 80vh;
+  overflow-y: scroll;
 }
 
 .chat {
@@ -23,22 +23,9 @@ body {
 }
 
 #chat-input {
-
   background-color: #1f242d;
-  position: fixed;
-  bottom: 0;
   width: 100%;
   padding: 20px;
-
-  /* background-color: #1f242d;
-  position: fixed;
-  bottom: 0;
-  left: 50%;
-  transform: translate(-50%, 0);
-  width: 100%;
-  text-align: center;
-  padding: 20px;
-  font-size: 26px; */
 }
 
 .user-input {
@@ -51,4 +38,3 @@ body {
   margin: 10px 0;
   width: 25%;
 }
-

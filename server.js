@@ -75,5 +75,4 @@ app.post('/createchat', async function(req, res) {
   } catch (err) {
     return res.status(500).send('Failed to save message');
   }
-
-})
+});

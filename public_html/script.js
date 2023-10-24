@@ -37,9 +37,10 @@ messageForm.addEventListener('submit', function(e) {
     post.then((response) => {
       return response.text();
     }).then((text) => {
-      console.log(text);
       // add message content to HTML
       chatContent.innerHTML = chatContent.innerHTML + newMessageHTML;
+      // clear message input value
+      document.getElementById('message-input').value = '';
     });
 
   }
