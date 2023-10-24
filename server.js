@@ -8,6 +8,7 @@ const app = express();
 const port = 8080;
 const bp = require('body-parser');
 const mongoose = require('mongoose');
+const cors = require('cors');
 
 // Database stuff
 // const MONGODB_URL = 'mongodb://localhost:27017';
@@ -37,6 +38,7 @@ db()
 
 app.use(express.static('/assets'), express.static(__dirname + '/public_html'));
 app.use(bp.json());
+app.use(cors());
 
 app.listen(port, () =>
   console.log(`App listening at http://localhost:${port}`)
