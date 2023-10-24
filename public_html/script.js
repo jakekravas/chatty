@@ -25,7 +25,7 @@ messageForm.addEventListener('submit', function(e) {
       message: messageVal
     }
 
-    let post = fetch('http://localhost:8080/createchat', {
+    let post = fetch('http://127.0.0.1:8080/createchat', {
       method: 'POST',
       body: JSON.stringify(info),
       headers: { 'Content-Type': 'application/json'}
@@ -46,7 +46,7 @@ window.onload = loadAllMessages();
 
 function loadAllMessages() {
 
-  let url = 'http://localhost:8080/get';
+  let url = 'http://127.0.0.1:8080/get';
 
   fetch(url).then((response) => {
     return response.text();
