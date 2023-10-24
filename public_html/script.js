@@ -20,6 +20,7 @@ messageForm.addEventListener('submit', function(e) {
     let newMessageHTML = `<p class='chat'><strong>${aliasVal}: </strong>${messageVal}</p>`;
     let chatContent = document.getElementById('chat-content');
 
+    // object to send to front-end
     const info = {
       time: currentTime,
       alias: aliasVal,

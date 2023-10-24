@@ -11,8 +11,6 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 
 // Database stuff
-// const MONGODB_URL = 'mongodb://127.0.0.1:27017/chatty';
-// const MONGODB_URL = 'mongodb+srv://doadmin:<replace-with-your-password>@db-mongodb-nyc3-48338-e31ed994.mongo.ondigitalocean.com/admin?replicaSet=db-mongodb-nyc3-48338&tls=true&authSource=admin';
 const MONGODB_URL = 'mongodb+srv://jake:a4d7g3dmjfvDJ4F4@cluster0.mw0iqgf.mongodb.net/?retryWrites=true&w=majority';
 
 let Schema = mongoose.Schema;
@@ -43,7 +41,7 @@ app.use(cors());
 
 // Starts app
 app.listen(port, () =>
-console.log(`App listening at http://127.0.0.1:${port}`)
+  console.log(`App listening at http://127.0.0.1:${port}`)
 );
 
 // Gets all chats from database and sends them to front-end as as HTML-compatible string
